@@ -3,7 +3,7 @@ import pyttsx
 import time
 
 def get_current_weather():
-    conditions = requests.get("http://api.wunderground.com/api/0def10027afaebb7/conditions/q/78256.json")
+    conditions = requests.get("http://api.wunderground.com/api/YourAPICodeHere/conditions/q/YourZipCodeHere.json")
     weather = conditions.json()
     
     currentWeather = {}
@@ -23,7 +23,7 @@ def get_current_weather_text():
     return text
     
 def get_todays_weather():
-    forecast = requests.get("http://api.wunderground.com/api/0def10027afaebb7/forecast/q/78256.json")
+    forecast = requests.get("http://api.wunderground.com/api/YourAPICodeHere/forecast/q/YourZipCodeHere.json")
     weather = forecast.json()
     
     todaysWeather = {}
@@ -41,8 +41,8 @@ def get_todays_weather_text():
 def get_gretting():
     hour = int(time.strftime('%H:%M:%S')[:2])
     if hour == 24 or hour < 12:
-        return "Good morning Joseph!"
-    return "Good afternoon Joseph!"
+        return "Good morning YourNameHere!"
+    return "Good afternoon YourNameHere!"
 
 def get_reminders():
     todaysWeather = get_todays_weather()
